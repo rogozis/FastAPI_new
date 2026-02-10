@@ -12,3 +12,10 @@ class Estimator:
 
 
 estimation_model = Estimator()
+
+"""
+This model contains two functions - init and predict
+Init creates self object with weights variable, which can be used as method
+Weights contain floats referring to columns in class User
+Model predicts loyalty score based on features. Digits have no context, it's just work instance
+"""
