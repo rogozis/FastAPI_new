@@ -4,7 +4,7 @@ from db_init import User, session, Cart, Product
 from est_model import estimation_model
 from pydantic_schemas import CartAddOrDelete
 
-app = FastAPI(title='Recommendation System and Loyalty Estimation API')
+app = FastAPI(title='Customer Loyalty Estimation API')
 
 """
 Endpoint to estimate user loyalty
@@ -77,12 +77,6 @@ def clear_cart():
     session.query(Cart).delete()
     session.commit()
     return {'status': 'cleared'}
-
-
-"""Endpoint to recommend nearest products to user according to his last added product"""
-@app.get('/recommend_nearest/{user_id}')
-def recommend_nearest_products(user_id: int):
-    session.query(Cart).filter(Cart.product_id == user_id).all()
 
 
 # if __name__ == "__main__":
